@@ -1,4 +1,4 @@
-## Arabic-CLIP
+## AraCLIP: Cross-Lingual Learning for Effective Arabic Image Retrieval
 
 
 
