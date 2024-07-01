@@ -223,12 +223,63 @@
           <!-- Abstract. -->
           <div class="columns is-centered has-text-centered">
             <div class="column is-four-fifths">
-              <h2 class="title is-3">AraCLIP Framework: What does this work
-                mean?</h2>
+              <h2 class="title is-3">AraCLIP Framework: How this framework has
+                been trained?</h2>
               <div class="content has-text-justified">
-                <p>
 
-                  Here is the framework
+                <p>
+                  The overall view of the cross-lingual Arabic framework
+                  involves three main stages as shown below:
+
+                </p>
+
+                <p>
+                  In stage 1, we illustrates the English
+                  text model and the image model on contrastive learning. These
+                  models are strongly connected in the embedding space since
+                  this is our assumption from the beginning. Therefore, if we
+                  give the model an image and its caption, their embedding
+                  should show a high cosine similarity. Also, these models are
+                  already trained using contrastive learning to be able to
+                  capture the similarity between image-text pairs based on their
+                  embedding. Note that the English text model and image model
+                  can be separated.
+                </p>
+                <p>
+                  In stage 2, we conduct the model training where we get the
+                  English text model (teacher model) from the first stage and a
+                  pre-trained Arabic model (student model), Arabert model
+                  in this work. The input for the
+                  teacher model will be the English caption and the input for
+                  the student model will be the translated and pre-processed
+                  Arabic caption. Then, the Arabic text model (student model)
+                  will produce an embedding vector of the Arabic caption that is
+                  similar to the embedding vector of the English caption that
+                  was produced from English model. Then, we minimize the Mean
+                  Squared Error (MSE) between the resulting output embeddings of
+                  these models.
+                </p>
+                <p>
+                  It is important to highlight that this approach is different
+                  from the original training objective of CLIP, which focuses on
+                  training the model to establish correlations through cosine
+                  similarity calculations between pairs of images and texts.
+                  Nevertheless, it is feasible to directly employ cosine
+                  similarity in the context of teacher learning; however, prior
+                  research has demonstrated that the minimization of MSE yields
+                  a more informative signal for learning. On this stage, we are
+                  using the
+                  teacher-learning (Knowledge Distillation) training, as the
+                  student model will learn the features from the teacher, so it
+                  could be connected to the image model features.
+                </p>
+
+                <p>
+                  Stage 3 shows the the evaluation of the Arabic text trained
+                  model (student model) with the image model, to check the
+                  performance in understanding text images. In our work, we
+                  evaluated it using different datasets (Arabic XTD-10 and
+                  Arabic flicker 8k) based on different metrics.
                 </p>
                 <div class="column is-centered has-text-centered">
                   <img src="static/images/AraCLIP_framework.jpg"
@@ -249,7 +300,16 @@
               <h2 class="title has-text-centered">Results</h2>
               <p style="margin-top: 30px; margin-bottom: 30px">
                 <!-- <div class="column is-four-fifths"> -->
-                Here is the results of the first example:
+
+                The figure below demonstrates a result of the
+                complex category which has some complexity on the sentence as
+                رجل يتزلج على الماء بلوح شراعي (Man surfing on a
+                windsurf). For this example, we see that AraCLIP was better than
+                mCLIP on retriving the images related to this query. AraCLIP
+                retrieved images that have sail while mCLIP fails on this. Both
+                model retrieve images that have some objects mentioned on the
+                input text.
+
                 <div class="column is-centered has-text-centered">
                   <img src="static/images/results_1.jpg" alt="Results 1"
                     style="width: 75%" />
@@ -258,7 +318,16 @@
 
               <p style="margin-top: 30px; margin-bottom: 30px">
                 <!-- <div class="column is-four-fifths"> -->
-                Here is the results of the second example:
+                In the figure below, we provided an example of a sentence with
+                some objects that are shown clearly as كلب يهاجم قطة بينما القطة
+                تحت مقعد خشبي (A dog attacks a cat while the cat is under a
+                wooden bench) on the retrieved images. Our model was able to
+                capture the objects even though they are not clear in the image,
+                it got the related image as the highest image while the other
+                images are related by containing some related objects to the
+                input sentence on them. While mCLIP struggles to capture the
+                correct image as the first option, it can retrieve related
+                images later which has the correct image.
                 <div class="column is-centered has-text-centered">
                   <img src="static/images/results_2.jpg" alt="Results 2"
                     style="width: 75%" />
@@ -273,7 +342,12 @@
         <section class="section" id="BibTeX">
           <div class="container is-max-desktop content">
             <h2 class="title">BibTeX</h2>
-            <p>Coming soon.</p>
+            <p>This paper has been accepted in <a
+                href="https://arabicnlp2024.sigarab.org/home">
+                The Second
+                Arabic Natural Language Processing Conference
+                (ArabicNLP 2024) -
+                Co-located with ACL 2024</a>.</p>
           </div>
         </section>
 
