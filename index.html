@@ -314,102 +314,117 @@
                   subset of (synthetic) Conceptual Captions</a> that has been
                 Filtered by ViT-L.
 
-                <div class="column is-centered has-text-centered">
-                  <img src="static/images/results_1.jpg" alt="Results 1"
-                    style="width: 75%" />
+                <diff>
+                  <p>
+                    All datasets used on the project can be found at <a
+                      href="https://huggingface.co/Arabic-Clip">Arabic-Clip on
+                      huggingface</a>.
+                  </p>
+
                 </div>
-              </p>
+              </div>
 
-            </div>
-          </div>
+            </section>
 
-        </section>
+            <section class="section hero is-light">
+              <div class="hero-body">
+                <!--    <div class="container">-->
+                <div class="container is-max-desktop">
+                  <!-- Paper poster -->
 
-        <section class="section hero is-light">
-          <div class="hero-body">
-            <!--    <div class="container">-->
-            <div class="container is-max-desktop">
-              <!-- Paper poster -->
+                  <!--      <h2 class="title has-text-centered">Additional Results</h2>-->
+                  <h2 class="title has-text-centered">Results</h2>
+                  <p style="margin-top: 30px; margin-bottom: 30px">
+                    <!-- <div class="column is-four-fifths"> -->
 
-              <!--      <h2 class="title has-text-centered">Additional Results</h2>-->
-              <h2 class="title has-text-centered">Results</h2>
-              <p style="margin-top: 30px; margin-bottom: 30px">
-                <!-- <div class="column is-four-fifths"> -->
+                    The figure below demonstrates a result of the
+                    complex category which has some complexity on the sentence
+                    as
+                    رجل يتزلج على الماء بلوح شراعي (Man surfing on a
+                    windsurf). For this example, we see that AraCLIP was
+                    better than
+                    mCLIP on retriving the images related to this query.
+                    AraCLIP
+                    retrieved images that have sail while mCLIP fails on this.
+                    Both
+                    model retrieve images that have some objects mentioned on
+                    the
+                    input text.
 
-                The figure below demonstrates a result of the
-                complex category which has some complexity on the sentence as
-                رجل يتزلج على الماء بلوح شراعي (Man surfing on a
-                windsurf). For this example, we see that AraCLIP was better than
-                mCLIP on retriving the images related to this query. AraCLIP
-                retrieved images that have sail while mCLIP fails on this. Both
-                model retrieve images that have some objects mentioned on the
-                input text.
+                    <div class="column is-centered has-text-centered">
+                      <img src="static/images/results_1.jpg" alt="Results 1"
+                        style="width: 75%" />
+                    </div>
+                  </p>
 
-                <div class="column is-centered has-text-centered">
-                  <img src="static/images/results_1.jpg" alt="Results 1"
-                    style="width: 75%" />
+                  <p style="margin-top: 30px; margin-bottom: 30px">
+                    <!-- <div class="column is-four-fifths"> -->
+                    In the figure below, we provided an example of a sentence
+                    with
+                    some objects that are shown clearly as كلب يهاجم قطة بينما
+                    القطة
+                    تحت مقعد خشبي (A dog attacks a cat while the cat is under
+                    a
+                    wooden bench) on the retrieved images. Our model was able
+                    to
+                    capture the objects even though they are not clear in the
+                    image,
+                    it got the related image as the highest image while the
+                    other
+                    images are related by containing some related objects to
+                    the
+                    input sentence on them. While mCLIP struggles to capture
+                    the
+                    correct image as the first option, it can retrieve related
+                    images later which has the correct image.
+                    <div class="column is-centered has-text-centered">
+                      <img src="static/images/results_2.jpg" alt="Results 2"
+                        style="width: 75%" />
+                    </div>
+                  </p>
+                  <!--/ Paper poster -->
                 </div>
-              </p>
+              </div>
 
-              <p style="margin-top: 30px; margin-bottom: 30px">
-                <!-- <div class="column is-four-fifths"> -->
-                In the figure below, we provided an example of a sentence with
-                some objects that are shown clearly as كلب يهاجم قطة بينما القطة
-                تحت مقعد خشبي (A dog attacks a cat while the cat is under a
-                wooden bench) on the retrieved images. Our model was able to
-                capture the objects even though they are not clear in the image,
-                it got the related image as the highest image while the other
-                images are related by containing some related objects to the
-                input sentence on them. While mCLIP struggles to capture the
-                correct image as the first option, it can retrieve related
-                images later which has the correct image.
-                <div class="column is-centered has-text-centered">
-                  <img src="static/images/results_2.jpg" alt="Results 2"
-                    style="width: 75%" />
-                </div>
-              </p>
-              <!--/ Paper poster -->
-            </div>
-          </div>
+            </section>
 
-        </section>
-
-        <section class="section" id="BibTeX">
-          <div class="container is-max-desktop content">
-            <h2 class="title">BibTeX</h2>
-            <pre><code>@inproceedings{al2024araclip,
+            <section class="section" id="BibTeX">
+              <div class="container is-max-desktop content">
+                <h2 class="title">BibTeX</h2>
+                <pre><code>@inproceedings{al2024araclip,
               title={AraCLIP: Cross-Lingual Learning for Effective Arabic Image Retrieval},
               author={Al-Barham, Muhammad and Afyouni, Imad and Almubarak, Khalid and Elnagar, Ashraf and Turky, Ayad and Hashem, Ibrahim},
               booktitle={Proceedings of The Second Arabic Natural Language Processing Conference},
               pages={102--110},
               year={2024}
             }</code></pre>
-          </div>
-        </section>
+              </div>
+            </section>
 
-        <footer class="footer">
-          <div class="container">
-            <div class="columns is-centered">
-              <div class="column is-8">
-                <div class="content">
-                  <p>
-                    This website is licensed under a <a rel="license"
-                      href="http://creativecommons.org/licenses/by-sa/4.0/">
-                      Creative
-                      Commons Attribution-ShareAlike 4.0 International
-                      License</a>.
-                  </p>
-                  <p>
-                    Website source code based on the <a
-                      href="https://nerfies.github.io/"> NeRFies</a>. Thanks for
-                    their excellent work.
+            <footer class="footer">
+              <div class="container">
+                <div class="columns is-centered">
+                  <div class="column is-8">
+                    <div class="content">
+                      <p>
+                        This website is licensed under a <a rel="license"
+                          href="http://creativecommons.org/licenses/by-sa/4.0/">
+                          Creative
+                          Commons Attribution-ShareAlike 4.0 International
+                          License</a>.
+                      </p>
+                      <p>
+                        Website source code based on the <a
+                          href="https://nerfies.github.io/"> NeRFies</a>.
+                        Thanks for
+                        their excellent work.
 
-                  </p>
+                      </p>
+                    </div>
+                  </div>
                 </div>
               </div>
-            </div>
-          </div>
-        </footer>
+            </footer>
 
-      </body>
-    </html>
+          </body>
+        </html>
