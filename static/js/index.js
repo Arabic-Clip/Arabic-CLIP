@@ -3,6 +3,29 @@ window.HELP_IMPROVE_VIDEOJS = false;
 var INTERP_BASE = "./static/interpolation/stacked";
 var NUM_INTERP_FRAMES = 240;
 
+// Copy to clipboard function
+function copyToClipboard(button) {
+  const container = button.closest('.copy-container');
+  const text = container.querySelector('code').innerText;
+  
+  navigator.clipboard.writeText(text).then(() => {
+    // Visual feedback
+    button.classList.add('copied');
+    const icon = button.querySelector('i');
+    icon.classList.remove('fa-copy');
+    icon.classList.add('fa-check');
+    
+    // Reset after 2 seconds
+    setTimeout(() => {
+      button.classList.remove('copied');
+      icon.classList.remove('fa-check');
+      icon.classList.add('fa-copy');
+    }, 2000);
+  }).catch(err => {
+    console.error('Failed to copy text: ', err);
+  });
+}
+
 var interp_images = [];
 function preloadInterpolationImages() {
   for (var i = 0; i < NUM_INTERP_FRAMES; i++) {
